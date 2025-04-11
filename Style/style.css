@@ -29,7 +29,7 @@ body {
 
 .hero {
   background-image: url("../images/drew-coffman-1872.jpg");
-  height: 100vh;
+  min-height: 100vh;
   background-size: cover;
   background-position: center;
 }
@@ -58,7 +58,19 @@ body {
   color: #fff;
   font-size: 17px;
   transition: ease 0.3s;
+  position: relative;
 }
+.nav .hero-links .links li a::after {
+  content: "";
+  position: absolute;
+  background-color: #bca37d;
+  width: 0;
+  height: 2px;
+  left: 0;
+  top: 100%;
+  transition: 0.3s ease;
+}
+
 .nav .hero-links .links li a:hover {
   color: #e5d0b1;
 }
@@ -66,7 +78,13 @@ body {
   padding-top: 140px;
   text-align: center;
   color: #fff;
+  margin: auto;
+  max-width: 700px;
 }
+.nav .hero-links .links li a:hover::after {
+  width: 100%;
+}
+
 .hero-content p {
   font-size: 25px;
   padding: 0;
